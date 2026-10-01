@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="أبو سرجة — كنيسة الشهيدين سرجيوس وباخوس، كنيسة المغارة في مصر القديمة. معرض رقمي تفاعلي للتاريخ والعمارة ورحلة العائلة المقدسة.">
+<title>أبو سرجة | كنيسة المغارة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1712;--deep:#172b25;--green:#1f3b31;--gold:#c9a84c;--cream:#f4eee2;--paper:#fbf8f1;--muted:#766f63;--line:rgba(31,59,49,.16)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Cairo,system-ui,sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
+.nav{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(244,238,226,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800}.seal{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:Marcellus,serif}.links{display:flex;gap:22px;font-size:14px}.links a{color:#4c473f}.links a:hover{color:var(--green)}
+.hero{min-height:100vh;display:grid;align-items:center;padding:120px 0 70px;background:radial-gradient(circle at 75% 20%,rgba(201,168,76,.2),transparent 28%),linear-gradient(120deg,#f7f0e4,#e7dcc8)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2px;font-size:13px}.hero h1{font-family:Marcellus,Cairo,serif;font-size:clamp(56px,9vw,110px);line-height:.95;margin:12px 0;color:var(--green);direction:ltr;text-align:right}.hero h2{font-size:clamp(25px,3vw,42px);margin:0 0 18px}.hero p{font-size:18px;color:#625b50;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 20px;border-radius:999px;border:1px solid var(--green);font-weight:700}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:transparent}.hero-art{min-height:500px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(145deg,#243f34,#111c18);box-shadow:0 30px 80px rgba(23,43,37,.25)}.hero-art:before{content:"";position:absolute;inset:18px;border:1px solid rgba(201,168,76,.55);border-radius:20px}.hero-art img{width:100%;height:100%;object-fit:cover;opacity:.78}.hero-caption{position:absolute;bottom:24px;right:24px;left:24px;padding:18px 20px;background:rgba(17,28,24,.72);color:#fff;border:1px solid rgba(201,168,76,.35);border-radius:16px}.hero-caption strong{color:#e6cb7d}
+.section{padding:100px 0}.section.dark{background:var(--green);color:#fff}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.kicker{color:var(--gold);font-weight:800;font-size:13px}.section h3{font-size:clamp(32px,5vw,55px);line-height:1.15;margin:7px 0}.lead{color:var(--muted);max-width:700px}.dark .lead{color:#d5d0c5}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 10px 30px rgba(25,25,20,.05)}.dark .card{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.12);box-shadow:none}.num{font-family:Marcellus,serif;font-size:40px;color:var(--gold);direction:ltr}.card h4{font-size:21px;margin:5px 0 10px}.card p{color:var(--muted);margin:0}.dark .card p{color:#d2cdc2}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.photo{border-radius:24px;overflow:hidden;min-height:450px;background:#d9ccb7}.photo img{width:100%;height:100%;min-height:450px;object-fit:cover}.quote{font-family:Marcellus,Cairo,serif;font-size:34px;line-height:1.4;color:var(--green);border-right:3px solid var(--gold);padding-right:22px;margin:28px 0}
+.timeline{position:relative;display:grid;gap:18px}.timeline:before{content:"";position:absolute;right:15px;top:5px;bottom:5px;width:1px;background:rgba(201,168,76,.45)}.event{position:relative;padding:5px 55px 5px 0}.event:before{content:"";position:absolute;right:8px;top:15px;width:15px;height:15px;background:var(--gold);border:4px solid var(--green);border-radius:50%}.year{color:var(--gold);font-weight:800}.event h4{margin:2px 0}.event p{margin:0;color:#d2cdc2}
+.crypt{background:linear-gradient(135deg,#111d19,#2c3f37);border-radius:28px;padding:45px;color:#fff;position:relative;overflow:hidden}.crypt:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(201,168,76,.12);left:-80px;bottom:-130px}.crypt-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.fact{padding:18px;border:1px solid rgba(255,255,255,.13);border-radius:15px;background:rgba(255,255,255,.04)}.fact b{display:block;color:var(--gold);font-size:25px}.fact span{color:#ddd}
+.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:220px;gap:14px}.gallery figure{margin:0;border-radius:18px;overflow:hidden;background:#ddd}.gallery figure:first-child{grid-row:span 2}.gallery img{width:100%;height:100%;object-fit:cover;transition:.4s}.gallery figure:hover img{transform:scale(1.04)}
+.tour{border-radius:24px;overflow:hidden;background:#111}.tour iframe{display:block;width:100%;height:600px;border:0}
+.sources{display:grid;gap:10px}.source{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#fff}.source small{color:var(--muted);display:block}.footer{background:#111c18;color:#d8d2c5;padding:40px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.arabic{font-weight:800;color:#fff}
+@media(max-width:850px){.links{display:none}.hero-grid,.split,.crypt-grid{grid-template-columns:1fr}.hero-art{min-height:380px}.grid3{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery figure:first-child{grid-row:span 1}.tour iframe{height:450px}.section{padding:70px 0}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="container nav-inner">
+<a class="brand" href="#home"><span class="seal">A</span><span>أبو سرجة · Abu Serga</span></a>
+<nav class="links"><a href="#story">الحكاية</a><a href="#cave">المغارة</a><a href="#architecture">العمارة</a><a href="#saints">الشهيدان</a><a href="#timeline">الخط الزمني</a><a href="#gallery">المعرض</a></nav>
+</div></header>
+
+<main>
+<section id="home" class="hero"><div class="container hero-grid">
+<div>
+<div class="eyebrow">DIGITAL HISTORICAL EXHIBITION · OLD CAIRO</div>
+<h1>ABU<br>SERGA</h1>
+<h2>كنيسة الشهيدين سرجيوس وباخوس<br>«كنيسة المغارة»</h2>
+<p>رحلة تفاعلية داخل واحد من أبرز مواقع مصر القديمة: تاريخ الكنيسة، مغارتها، عمارتها، قصة الشهيدين، وصلتها برحلة العائلة المقدسة.</p>
+<div class="actions"><a class="btn primary" href="#story">ابدأ الرحلة ↓</a><a class="btn secondary" href="#tour">الجولة الافتراضية</a></div>
+</div>
+<div class="hero-art">
+<img src="https://www.vetogate.com/Upload/libfiles/569/9/224.jpg" alt="مدخل كنيسة أبي سرجة">
+<div class="hero-caption"><strong>مصر القديمة · حصن بابليون</strong><br>موقع أثري وكنسي ارتبط في المصادر الرسمية برحلة العائلة المقدسة.</div>
+</div>
+</div></section>
+
+<section id="story" class="section"><div class="container">
+<div class="section-head"><div><div class="kicker">01 · THE STORY</div><h3>لماذا أبو سرجة؟</h3></div><p class="lead">اسم الكنيسة مرتبط بالقديسين سرجيوس وباخوس، وتحتل مكانة خاصة بسبب ارتباطها التقليدي برحلة العائلة المقدسة في مصر.</p></div>
+<div class="grid3">
+<article class="card"><div class="num">01</div><h4>الموقع</h4><p>تقع في منطقة مصر القديمة داخل نطاق حصن بابليون، وسط مجموعة مهمة من الآثار القبطية.</p></article>
+<article class="card"><div class="num">02</div><h4>التاريخ</h4><p>توجد آراء علمية مختلفة حول تاريخ إنشاء الكنيسة؛ وتعرض المصادر المصرية الرسمية ترجيحًا لإنشائها في أواخر القرن الرابع أو أوائل الخامس.</p></article>
+<article class="card"><div class="num">03</div><h4>الهوية</h4><p>تُعرف باسم أبي سرجة أو كنيسة المغارة، والاسم مرتبط بالشهيدين سرجيوس وباخوس.</p></article>
+</div>
+</div></section>
+
+<section id="cave" class="section dark"><div class="container">
+<div class="section-head"><div><div class="kicker">02 · THE CAVE</div><h3>المغارة تحت المذبح</h3></div><p class="lead">تحت منطقة الهيكل توجد المغارة التي ارتبطت في التقليد الكنسي برحلة العائلة المقدسة؛ وهي قلب القصة التي جعلت المكان مميزًا.</p></div>
+<div class="crypt"><div class="crypt-grid">
+<div><div class="kicker">THE HOLY FAMILY</div><h3>مكان صغير… وقصة كبيرة</h3><p>تذكر المصادر الرسمية المصرية أن كنيسة القديس سرجيوس تحتوي على المغارة التي لجأت إليها العائلة المقدسة أثناء رحلتها في مصر. وتحتل المغارة موقعًا تحت الهيكل في البناء الحالي.</p><a class="btn" style="color:#fff;border-color:rgba(255,255,255,.35);display:inline-block;margin-top:15px" href="#tour">شاهد الجولة الافتراضية</a></div>
+<div class="facts"><div class="fact"><b>3</b><span>عناصر رئيسية في تخطيط الكنيسة: الدهليز، الصحن، الهيكل.</span></div><div class="fact"><b>↓</b><span>المغارة تقع أسفل منطقة الهيكل.</span></div><div class="fact"><b>296م</b><span>تاريخ استشهاد سرجيوس وباخوس وفق المصادر التي تتناول سيرتهما.</span></div><div class="fact"><b>Old Cairo</b><span>مصر القديمة · القاهرة.</span></div></div>
+</div></div>
+</div></section>
+
+<section id="architecture" class="section"><div class="container split">
+<div class="photo"><img src="https://airial.travel/_next/image?q=70&url=https%3A%2F%2Fwww.egypttoursportal.com%2Fimages%2F2025%2F05%2FAbu-Serga-Church-Egypt-Tours-Portal.jpg&w=3840" alt="داخل كنيسة أبي سرجة"></div>
+<div><div class="kicker">03 · ARCHITECTURE</div><h3>باسيليكا تحمل طبقات من التاريخ</h3><p>تصميم الكنيسة يتبع التخطيط البازيليكي، ويضم صحنًا وجناحين جانبيين، مع عناصر فنية ومعمارية مميزة.</p><div class="quote">«العمارة هنا ليست خلفية للقصة؛ هي جزء من القصة نفسها.»</div><p>من العناصر اللافتة: الأعمدة، الحاجز الخشبي المرصع، المنبر، جرن المعمودية، والزخارف والأيقونات الموجودة على الجدران والأعمدة والقباب.</p></div>
+</div></section>
+
+<section id="saints" class="section dark"><div class="container">
+<div class="section-head"><div><div class="kicker">04 · SERGIUS & BACCHUS</div><h3>من هما سرجيوس وباخوس؟</h3></div><p class="lead">الكنيسة مكرسة لشهيدين ارتبط اسماهما بالتقليد المسيحي المبكر في سوريا.</p></div>
+<div class="grid3">
+<article class="card"><div class="num">S</div><h4>سرجيوس</h4><p>أحد الشهيدين اللذين تحمل الكنيسة اسمهما. تذكر المصادر أنه كان من رجال الجيش الروماني وأنه استشهد بسبب إيمانه المسيحي.</p></article>
+<article class="card"><div class="num">B</div><h4>باخوس / واخس</h4><p>الشهيد الثاني. تظهر في بعض المصادر العربية والقبطية صيغ مختلفة لتعريب الاسم، لذلك نعرض الاسم مع ملاحظة اختلاف النقل.</p></article>
+<article class="card"><div class="num">✝</div><h4>الاستشهاد</h4><p>تذكر المصادر التي تناولت سيرتهما أن استشهادهما كان في منطقة الرصافة بسوريا، ويُؤرخ له تقليديًا إلى سنة 296م.</p></article>
+</div>
+</div></section>
+
+<section id="timeline" class="section"><div class="container split">
+<div><div class="kicker">05 · TIMELINE</div><h3>محطات عبر الزمن</h3><p class="lead">نترك التواريخ التي يوجد حولها خلاف في صيغة «تقدير/رأي» بدل تقديمها كحقيقة محسومة.</p></div>
+<div class="timeline">
+<div class="event"><div class="year">القرنان 4–5م · تقدير رسمي</div><h4>بداية مبكرة محتملة</h4><p>المصادر الرسمية المصرية تذكر أن إنشاء الكنيسة يُرجح إلى أواخر القرن الرابع أو أوائل الخامس.</p></div>
+<div class="event"><div class="year">العصور الوسطى</div><h4>استمرار الأهمية الكنسية</h4><p>أصبحت الكنيسة من المواقع المهمة داخل مصر القديمة، وارتبطت بتاريخ الكنيسة القبطية والبطريركية.</p></div>
+<div class="event"><div class="year">العصر الفاطمي وما بعده</div><h4>ترميمات وتجديدات</h4><p>تعرضت الكنيسة لتغيرات وتجديدات عبر تاريخها، وتوجد آثار وعناصر نُقلت لاحقًا إلى المتحف القبطي.</p></div>
+<div class="event"><div class="year">2020</div><h4>جولة افتراضية رسمية</h4><p>أطلقت وزارة السياحة والآثار جولة افتراضية للكنيسة، وهو ما نستخدمه هنا كجزء من التجربة الرقمية.</p></div>
+</div>
+</div></section>
+
+<section id="gallery" class="section"><div class="container">
+<div class="section-head"><div><div class="kicker">06 · VISUAL ARCHIVE</div><h3>المعرض</h3></div><p class="lead">صور مرجعية للتجربة البصرية. في النسخة النهائية يمكن استبدالها بصوركم التي التقطتموها أثناء الزيارة مع توثيق مصدر كل صورة.</p></div>
+<div class="gallery">
+<figure><img src="https://www.vetogate.com/Upload/libfiles/569/9/224.jpg" alt="مدخل أبي سرجة"></figure>
+<figure><img src="https://airial.travel/_next/image?q=70&url=https%3A%2F%2Fwww.egypttoursportal.com%2Fimages%2F2025%2F05%2FAbu-Serga-Church-Egypt-Tours-Portal.jpg&w=3840" alt="صحن الكنيسة"></figure>
+<figure><img src="https://www.inside-egypt.com/images/abu-serga-church.jpg" alt="كنيسة أبي سرجة من الخارج" onerror="this.style.display='none'"></figure>
+<figure><img src="https://www.vetogate.com/Upload/libfiles/569/9/224.jpg" alt="تفاصيل المدخل"></figure>
+</div>
+</div></section>
+
+<section id="tour" class="section dark"><div class="container">
+<div class="section-head"><div><div class="kicker">07 · VIRTUAL TOUR</div><h3>ادخل الكنيسة من هنا</h3></div><p class="lead">جولة افتراضية أطلقتها وزارة السياحة والآثار لكنيسة القديس سرجيوس وباخوس «أبو سرجة».</p></div>
+<div class="tour"><iframe src="https://my.matterport.com/show/?m=PfNu1RDRbZf" allowfullscreen title="Abu Serga virtual tour"></iframe></div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="section-head"><div><div class="kicker">08 · SOURCES</div><h3>المصادر</h3></div><p class="lead">لأن ده مشروع أكاديمي، كل معلومة أساسية لازم تكون قابلة للتتبع.</p></div>
+<div class="sources">
+<div class="source"><b>وزارة السياحة والآثار المصرية — Discover Egypt's Monuments</b><small>صفحة كنيسة القديس سرجيوس وباخوس وأبي سرجة.</small></div>
+<div class="source"><b>الهيئة العامة للاستعلامات المصرية — رحلة العائلة المقدسة</b><small>معلومات عن المغارة وموقع أبي سرجة ضمن مسار العائلة المقدسة.</small></div>
+<div class="source"><b>وزارة السياحة والآثار — الجولة الافتراضية</b><small>جولة Matterport الرسمية المنشورة للكنيسة.</small></div>
+</div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div><span class="arabic">أبو سرجة</span> · Digital Historical Exhibition</div><div>Old Cairo · Egypt</div></div></footer>
+<script>
+const observer=new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.style.transform='translateY(0)';}),{threshold:.08});
+document.querySelectorAll('.card,.event,.source,.gallery figure').forEach(el=>{el.style.transform='translateY(12px)';el.style.transition='transform .7s ease';observer.observe(el)});
+</script>
+</body>
+</html>
