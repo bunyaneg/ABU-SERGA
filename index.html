@@ -26,13 +26,23 @@ a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:aut
 .tour{border-radius:24px;overflow:hidden;background:#111}.tour iframe{display:block;width:100%;height:600px;border:0}
 .sources{display:grid;gap:10px}.source{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#fff}.source small{color:var(--muted);display:block}.footer{background:#111c18;color:#d8d2c5;padding:40px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.arabic{font-weight:800;color:#fff}
 @media(max-width:850px){.links{display:none}.hero-grid,.split,.crypt-grid{grid-template-columns:1fr}.hero-art{min-height:380px}.grid3{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery figure:first-child{grid-row:span 1}.tour iframe{height:450px}.section{padding:70px 0}}
+
+/* BUNYAN / CINEMATIC STORY LAYER */
+.bunyan-mark{width:38px;height:38px;display:block}.bunyan-mark svg{width:100%;height:100%;display:block}.brand-copy{display:flex;flex-direction:column;line-height:1}.brand-copy strong{font-size:18px}.brand-copy small{font-size:8px;letter-spacing:1.5px;color:var(--muted);margin-top:5px;direction:ltr}.story-progress{position:fixed;z-index:30;top:72px;left:0;right:0;height:3px;background:transparent}.story-progress span{display:block;height:100%;width:0;background:var(--gold);box-shadow:0 0 12px rgba(201,168,76,.5)}
+.chapter-reveal{height:78vh;min-height:560px;position:relative;overflow:hidden;display:grid;place-items:center;background:#111}.chapter-bg,.chapter-overlay{position:absolute;inset:0}.chapter-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:slowZoom 12s ease-in-out infinite alternate}.chapter-overlay{background:linear-gradient(90deg,rgba(13,31,26,.86),rgba(13,31,26,.25),rgba(13,31,26,.72))}.chapter-content{position:relative;z-index:1;color:#fff;width:min(850px,88%);text-align:center}.chapter-number{font-size:12px;letter-spacing:4px;color:#e1c56e}.chapter-content h2{font-size:clamp(42px,7vw,82px);line-height:1.05;margin:16px 0}.chapter-content p{font-size:20px;color:#e4dfd4}.chapter-btn{display:inline-block;margin-top:20px;padding:12px 22px;border:1px solid rgba(255,255,255,.5);border-radius:999px;color:#fff}.walk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.walk-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:12px;position:relative;overflow:hidden;transition:.45s}.walk-card:hover{transform:translateY(-8px);box-shadow:0 25px 55px rgba(25,25,20,.12)}.walk-card>span{position:absolute;z-index:2;top:18px;right:18px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--gold);font-weight:800}.walk-image{height:220px;border-radius:15px;overflow:hidden}.walk-image img{width:100%;height:100%;object-fit:cover;transition:.5s}.walk-card:hover .walk-image img{transform:scale(1.06)}.walk-card h4{font-size:22px;margin:18px 8px 4px}.walk-card p{margin:0 8px 12px;color:var(--muted);font-size:14px}.architecture-note{margin-top:25px;border-right:3px solid var(--gold);padding:16px 20px;background:#f0e8da;border-radius:12px;color:#5f584d}.detail-dark{background:#13241f;color:#fff}.detail-dark .lead{color:#d4d0c7}.detail-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.detail-item{appearance:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);color:#fff;border-radius:20px;padding:24px;text-align:right;cursor:pointer;transition:.3s;font-family:inherit}.detail-item:hover,.detail-item.active{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.5);transform:translateY(-4px)}.detail-item b{color:var(--gold);font-family:Marcellus,serif;font-size:30px;display:block;direction:ltr}.detail-item span{display:block;font-size:19px;font-weight:800;margin-top:8px}.detail-item small{color:#bdb8ae}.detail-output{margin-top:18px;padding:20px;border:1px solid rgba(255,255,255,.12);border-radius:16px;color:#ddd;min-height:72px;display:flex;align-items:center}.gallery-story{display:grid;grid-template-columns:1.35fr .825fr .825fr;gap:16px}.gallery-story figure{margin:0;min-height:360px;position:relative;border-radius:22px;overflow:hidden;background:#ddd}.gallery-story .gallery-main{min-height:620px}.gallery-story img{width:100%;height:100%;object-fit:cover;transition:.7s}.gallery-story figure:hover img{transform:scale(1.045)}.gallery-story figcaption{position:absolute;bottom:0;left:0;right:0;padding:22px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.86));display:flex;flex-direction:column}.gallery-story figcaption b{font-size:18px}.gallery-story figcaption span{font-size:13px;color:#e5dfd5}.photo-credit,.academic-note{margin-top:18px;color:var(--muted);font-size:13px}.source a{display:inline-block;margin-top:10px;color:var(--green);font-weight:800}.academic-note{padding:18px;background:#f1e9dc;border-radius:14px;color:#5d564b}
+@keyframes slowZoom{from{transform:scale(1.04)}to{transform:scale(1.12)}}
+@media(max-width:950px){.walk-grid,.detail-grid{grid-template-columns:repeat(2,1fr)}.gallery-story{grid-template-columns:1fr 1fr}.gallery-story .gallery-main{grid-column:1/-1;min-height:480px}}
+@media(max-width:650px){.brand-copy{display:none}.walk-grid,.detail-grid,.gallery-story{grid-template-columns:1fr}.gallery-story .gallery-main{grid-column:auto;min-height:400px}.chapter-reveal{height:70vh;min-height:500px}.story-progress{top:72px}}
 </style>
 </head>
 <body>
 <header class="nav"><div class="container nav-inner">
-<a class="brand" href="#home"><span class="seal">A</span><span>أبو سرجة · Abu Serga</span></a>
-<nav class="links"><a href="#story">الحكاية</a><a href="#cave">المغارة</a><a href="#architecture">العمارة</a><a href="#saints">الشهيدان</a><a href="#timeline">الخط الزمني</a><a href="#gallery">المعرض</a></nav>
-</div></header>
+<a class="brand" href="#home" aria-label="بنيان">
+<span class="bunyan-mark" aria-hidden="true">
+<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#1A3A2F"/><path d="M18 78Q48 60 43 25" fill="none" stroke="#C9A84C" stroke-width="7"/><path d="M27 82Q58 62 51 29" fill="none" stroke="#E8DCC4" stroke-width="4"/><circle cx="43" cy="20" r="7" fill="#C9A84C"/></svg>
+</span><span class="brand-copy"><strong>بنيان</strong><small>BUNYANEG · HISTORICAL EXHIBITION</small></span></a>
+<nav class="links"><a href="#story">البداية</a><a href="#architecture">الكنيسة</a><a href="#cave">المغارة</a><a href="#saints">سرجيوس وباخوس</a><a href="#timeline">الزمن</a><a href="#gallery">المعرض</a><a href="#tour">الجولة</a></nav>
+</div></header><div class="story-progress"><span id="progressBar"></span></div>
 
 <main>
 <section id="home" class="hero"><div class="container hero-grid">
@@ -44,7 +54,7 @@ a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:aut
 <div class="actions"><a class="btn primary" href="#story">ابدأ الرحلة ↓</a><a class="btn secondary" href="#tour">الجولة الافتراضية</a></div>
 </div>
 <div class="hero-art">
-<img src="https://www.vetogate.com/Upload/libfiles/569/9/224.jpg" alt="مدخل كنيسة أبي سرجة">
+<img src="https://egymonuments.gov.eg/media/1385/_mg_0134.jpg?anchor=center&height=700&mode=crop&rnd=133881476880000000&width=1100" alt="داخل كنيسة أبي سرجة — وزارة السياحة والآثار">
 <div class="hero-caption"><strong>مصر القديمة · حصن بابليون</strong><br>موقع أثري وكنسي ارتبط في المصادر الرسمية برحلة العائلة المقدسة.</div>
 </div>
 </div></section>
@@ -58,6 +68,17 @@ a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:aut
 </div>
 </div></section>
 
+
+<section class="chapter-reveal" id="journey">
+  <div class="chapter-bg"><img src="https://egymonuments.gov.eg/media/1385/_mg_0134.jpg?anchor=center&height=900&mode=crop&rnd=133881476880000000&width=1600" alt=""></div>
+  <div class="chapter-overlay"></div>
+  <div class="chapter-content">
+    <span class="chapter-number">CHAPTER 01</span>
+    <h2>من هنا تبدأ الحكاية.</h2>
+    <p>ليس المطلوب أن تحفظ الكنيسة… بل أن تمشي داخل قصتها.</p>
+    <a class="chapter-btn" href="#architecture">ادخل إلى الكنيسة ↓</a>
+  </div>
+</section>
 <section id="cave" class="section dark"><div class="container">
 <div class="section-head"><div><div class="kicker">02 · THE CAVE</div><h3>المغارة تحت المذبح</h3></div><p class="lead">تحت منطقة الهيكل توجد المغارة التي ارتبطت في التقليد الكنسي برحلة العائلة المقدسة؛ وهي قلب القصة التي جعلت المكان مميزًا.</p></div>
 <div class="crypt"><div class="crypt-grid">
@@ -66,12 +87,31 @@ a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:aut
 </div></div>
 </div></section>
 
-<section id="architecture" class="section"><div class="container split">
-<div class="photo"><img src="https://airial.travel/_next/image?q=70&url=https%3A%2F%2Fwww.egypttoursportal.com%2Fimages%2F2025%2F05%2FAbu-Serga-Church-Egypt-Tours-Portal.jpg&w=3840" alt="داخل كنيسة أبي سرجة"></div>
-<div><div class="kicker">03 · ARCHITECTURE</div><h3>باسيليكا تحمل طبقات من التاريخ</h3><p>تصميم الكنيسة يتبع التخطيط البازيليكي، ويضم صحنًا وجناحين جانبيين، مع عناصر فنية ومعمارية مميزة.</p><div class="quote">«العمارة هنا ليست خلفية للقصة؛ هي جزء من القصة نفسها.»</div><p>من العناصر اللافتة: الأعمدة، الحاجز الخشبي المرصع، المنبر، جرن المعمودية، والزخارف والأيقونات الموجودة على الجدران والأعمدة والقباب.</p></div>
-</div></section>
 
-<section id="saints" class="section dark"><div class="container">
+<section id="architecture" class="section architecture-story">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">03 · WALK INSIDE</div><h3>امشِ داخل الكنيسة خطوة بخطوة</h3></div><p class="lead">الكنيسة مصممة على النمط البازيليكي، وتصف وزارة السياحة والآثار عناصرها الأساسية: مساحة عرضية، أروقة طولية، وحنية شرقية تقع أسفلها المغارة.</p></div>
+  <div class="walk-grid">
+    <article class="walk-card"><span>01</span><div class="walk-image"><img src="https://egymonuments.gov.eg/media/1385/_mg_0134.jpg?anchor=center&height=500&mode=crop&rnd=133881476880000000&width=700" alt="الصحن والحاجز الخشبي"></div><h4>الصحن</h4><p>الممر المركزي يقود العين نحو منطقة الهيكل، بينما تصطف الأعمدة والأروقة على جانبيه.</p></article>
+    <article class="walk-card"><span>02</span><div class="walk-image"><img src="https://egymonuments.gov.eg/media/6066/%D8%A7%D8%A8%D9%88%D8%B3%D8%B1%D8%AC%D8%A9.jpg?anchor=center&height=550&mode=crop&rnd=133529878100000000&width=1000" alt="منظور الجولة الافتراضية للكنيسة"></div><h4>الأعمدة والأروقة</h4><p>الأعمدة الرخامية تقسم الفراغ الداخلي إلى أجزاء، وتظهر عليها وفي محيطها زخارف ومناظر دينية.</p></article>
+    <article class="walk-card"><span>03</span><div class="walk-image"><img src="https://egymonuments.gov.eg/media/1385/_mg_0134.jpg?anchor=center&height=500&mode=crop&rnd=133881476880000000&width=700" alt="الهيكل والحجاب الخشبي"></div><h4>الحجاب الخشبي</h4><p>من أبرز العناصر الفنية: الحجاب الخشبي المطعم بالعاج، وهو يفصل منطقة الهيكل عن الصحن.</p></article>
+    <article class="walk-card"><span>04</span><div class="walk-image"><img src="https://egymonuments.gov.eg/media/6066/%D8%A7%D8%A8%D9%88%D8%B3%D8%B1%D8%AC%D8%A9.jpg?anchor=center&height=550&mode=crop&rnd=133529878100000000&width=1000" alt="تفاصيل الأيقونات والواجهات"></div><h4>المناظر الدينية</h4><p>تظهر مناظر للقديسين والرسل على القباب والجدران والأعمدة، وتمنح المكان طبقة بصرية من السرد الديني.</p></article>
+  </div>
+  <div class="architecture-note"><strong>ملاحظة بحثية:</strong> تاريخ بناء الكنيسة ليس محسومًا؛ صفحة وزارة السياحة والآثار تعرض رأيين رئيسيين، أواخر القرن الرابع/أوائل الخامس، ورأيًا آخر يرجعه إلى القرن السابع عشر. لذلك لن نقدّم التاريخ كحقيقة واحدة قطعية.</div>
+</div>
+</section>
+<section class="section detail-dark">
+<div class="container">
+ <div class="section-head"><div><div class="kicker">DETAILS MATTER</div><h3>التفاصيل الصغيرة التي لا ينبغي أن تفوتك</h3></div><p class="lead">اضغط على أي بطاقة لتكشف المعلومة.</p></div>
+ <div class="detail-grid">
+  <button class="detail-item" data-detail="الإنبل: عنصر معماري/كنسي بارز ذكرته وزارة السياحة والآثار ضمن خصائص الكنيسة."><b>01</b><span>الإنبل</span><small>اضغط للكشف</small></button>
+  <button class="detail-item" data-detail="مغطس التعميد: من العناصر التي تذكرها الصفحة الرسمية ضمن التجهيزات المعمارية والفنية للكنيسة."><b>02</b><span>مغطس التعميد</span><small>اضغط للكشف</small></button>
+  <button class="detail-item" data-detail="الحجاب الخشبي المطعم بالعاج من أكثر العناصر الفنية لفتًا للانتباه داخل الكنيسة."><b>03</b><span>الحجاب الخشبي</span><small>اضغط للكشف</small></button>
+  <button class="detail-item" data-detail="القباب والجدران والأعمدة تحمل مناظر دينية للقديسين والرسل، فتتحول العمارة إلى وسيلة للسرد."><b>04</b><span>الأيقونات والمناظر</span><small>اضغط للكشف</small></button>
+ </div>
+ <div id="detailOutput" class="detail-output">اختار تفصيلة…</div>
+</div>
+</section><section id="saints">> class="section dark"><div class="container">
 <div class="section-head"><div><div class="kicker">04 · SERGIUS & BACCHUS</div><h3>من هما سرجيوس وباخوس؟</h3></div><p class="lead">الكنيسة مكرسة لشهيدين ارتبط اسماهما بالتقليد المسيحي المبكر في سوريا.</p></div>
 <div class="grid3">
 <article class="card"><div class="num">S</div><h4>سرجيوس</h4><p>أحد الشهيدين اللذين تحمل الكنيسة اسمهما. تذكر المصادر أنه كان من رجال الجيش الروماني وأنه استشهد بسبب إيمانه المسيحي.</p></article>
@@ -90,17 +130,16 @@ a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:aut
 </div>
 </div></section>
 
-<section id="gallery" class="section"><div class="container">
-<div class="section-head"><div><div class="kicker">06 · VISUAL ARCHIVE</div><h3>المعرض</h3></div><p class="lead">صور مرجعية للتجربة البصرية. في النسخة النهائية يمكن استبدالها بصوركم التي التقطتموها أثناء الزيارة مع توثيق مصدر كل صورة.</p></div>
-<div class="gallery">
-<figure><img src="https://www.vetogate.com/Upload/libfiles/569/9/224.jpg" alt="مدخل أبي سرجة"></figure>
-<figure><img src="https://airial.travel/_next/image?q=70&url=https%3A%2F%2Fwww.egypttoursportal.com%2Fimages%2F2025%2F05%2FAbu-Serga-Church-Egypt-Tours-Portal.jpg&w=3840" alt="صحن الكنيسة"></figure>
-<figure><img src="https://www.inside-egypt.com/images/abu-serga-church.jpg" alt="كنيسة أبي سرجة من الخارج" onerror="this.style.display='none'"></figure>
-<figure><img src="https://www.vetogate.com/Upload/libfiles/569/9/224.jpg" alt="تفاصيل المدخل"></figure>
-</div>
-</div></section>
 
-<section id="tour" class="section dark"><div class="container">
+<section id="gallery" class="section"><div class="container">
+<div class="section-head"><div><div class="kicker">06 · VISUAL ARCHIVE</div><h3>الأرشيف البصري — بالترتيب</h3></div><p class="lead">في النسخة النهائية سنضيف صور زيارتكم الشخصية لكل نقطة، مع اسم العنصر ومكانه ومصدر الصورة.</p></div>
+<div class="gallery-story">
+  <figure class="gallery-main"><img src="https://egymonuments.gov.eg/media/1385/_mg_0134.jpg?anchor=center&height=850&mode=crop&rnd=133881476880000000&width=1250" alt="كنيسة أبي سرجة من الداخل"><figcaption><b>01 · المشهد العام</b><span>الممر المركزي والهيكل والحجاب الخشبي.</span></figcaption></figure>
+  <figure><img src="https://egymonuments.gov.eg/media/6066/%D8%A7%D8%A8%D9%88%D8%B3%D8%B1%D8%AC%D8%A9.jpg?anchor=center&height=650&mode=crop&rnd=133529878100000000&width=1000" alt="الجولة الافتراضية الرسمية"><figcaption><b>02 · منظور الجولة</b><span>لقطة من الجولة الافتراضية التي نشرتها الوزارة.</span></figcaption></figure>
+  <figure><img src="https://egymonuments.gov.eg/media/1385/_mg_0134.jpg?anchor=center&height=650&mode=crop&rnd=133881476880000000&width=1000" alt="تفاصيل داخلية"><figcaption><b>03 · التفاصيل</b><span>الأعمدة، الأروقة، الحجاب والعناصر الخشبية.</span></figcaption></figure>
+</div>
+<div class="photo-credit">الصور المرجعية أعلاه من صفحات وزارة السياحة والآثار المصرية الخاصة بكنيسة أبي سرجة والجولة الافتراضية. citeturn1view0turn5view0</div>
+</div></section><section id="tour"> class="section dark"><div class="container">
 <div class="section-head"><div><div class="kicker">07 · VIRTUAL TOUR</div><h3>ادخل الكنيسة من هنا</h3></div><p class="lead">جولة افتراضية أطلقتها وزارة السياحة والآثار لكنيسة القديس سرجيوس وباخوس «أبو سرجة».</p></div>
 <div class="tour"><iframe src="https://my.matterport.com/show/?m=PfNu1RDRbZf" allowfullscreen title="Abu Serga virtual tour"></iframe></div>
 </div></section>
@@ -108,10 +147,11 @@ a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:aut
 <section class="section"><div class="container">
 <div class="section-head"><div><div class="kicker">08 · SOURCES</div><h3>المصادر</h3></div><p class="lead">لأن ده مشروع أكاديمي، كل معلومة أساسية لازم تكون قابلة للتتبع.</p></div>
 <div class="sources">
-<div class="source"><b>وزارة السياحة والآثار المصرية — Discover Egypt's Monuments</b><small>صفحة كنيسة القديس سرجيوس وباخوس وأبي سرجة.</small></div>
-<div class="source"><b>الهيئة العامة للاستعلامات المصرية — رحلة العائلة المقدسة</b><small>معلومات عن المغارة وموقع أبي سرجة ضمن مسار العائلة المقدسة.</small></div>
-<div class="source"><b>وزارة السياحة والآثار — الجولة الافتراضية</b><small>جولة Matterport الرسمية المنشورة للكنيسة.</small></div>
+<div class="source"><b>وزارة السياحة والآثار — كنيسة أبي سرجة</b><small>المصدر الأساسي للمعلومات عن الموقع، التخطيط البازيليكي، المغارة، العناصر الفنية، والخلاف حول تاريخ البناء.</small><a href="https://egymonuments.gov.eg/ar/monuments/church-of-saint-sergius-and-bacchus/" target="_blank">فتح المصدر ↗</a></div>
+<div class="source"><b>وزارة السياحة والآثار — مسار العائلة المقدسة</b><small>توثيق أبي سرجة ضمن نقاط مسار العائلة المقدسة، ووصف المغارة.</small><a href="https://egymonuments.gov.eg/ar/news/the-journey-of-the-holy-family/" target="_blank">فتح المصدر ↗</a></div>
+<div class="source"><b>وزارة السياحة والآثار — الجولة الافتراضية</b><small>الجولة الافتراضية الرسمية للكنيسة.</small><a href="https://egymonuments.gov.eg/ar/news/a-virtual-tour-through-abu-serga-church/" target="_blank">فتح المصدر ↗</a></div>
 </div>
+<div class="academic-note">هذه النسخة تستخدم معلومات موثقة، وتفصل بين الحقائق الموثقة والتقاليد والآراء المختلف عليها. قبل التسليم، أضفوا نتائج زيارتكم الميدانية وأسماء الصور التي التقطتموها بأنفسكم.</div>
 </div></section>
 </main>
 
@@ -119,6 +159,11 @@ a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:aut
 <script>
 const observer=new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.style.transform='translateY(0)';}),{threshold:.08});
 document.querySelectorAll('.card,.event,.source,.gallery figure').forEach(el=>{el.style.transform='translateY(12px)';el.style.transition='transform .7s ease';observer.observe(el)});
+document.addEventListener('DOMContentLoaded',()=>{
+ const bar=document.getElementById('progressBar');
+ const update=()=>{const d=document.documentElement.scrollHeight-innerHeight;bar.style.width=(d>0?(scrollY/d)*100:0)+'%'}; addEventListener('scroll',update,{passive:true}); update();
+ document.querySelectorAll('.detail-item').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.detail-item').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById('detailOutput').textContent=btn.dataset.detail}));
+});
 </script>
 </body>
 </html>
