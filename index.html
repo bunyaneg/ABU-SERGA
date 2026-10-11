@@ -56,6 +56,54 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;ba
 /* Clean interactive visual encyclopedia */
 .topic,.walk-card.visual-trigger{font:inherit;cursor:pointer;text-align:right;width:100%}.walk-card.visual-trigger{border:1px solid var(--line);color:inherit}.walk-card.visual-trigger:hover{transform:translateY(-4px);border-color:#c9a84c88}
 .visual-modal{display:none;position:fixed;inset:0;z-index:300}.visual-modal.open{display:block}.visual-backdrop{position:absolute;inset:0;background:#07130fee;backdrop-filter:blur(8px)}.visual-box{position:relative;z-index:2;width:min(1120px,94vw);max-height:90vh;overflow:auto;margin:5vh auto;background:#f5f0e8;border-radius:26px;box-shadow:0 35px 100px #0008;display:grid;grid-template-columns:1.15fr .85fr;direction:ltr}.visual-close{position:absolute;right:14px;top:12px;width:42px;height:42px;border:0;border-radius:50%;background:var(--green);color:#fff;font-size:28px;cursor:pointer;z-index:4}.visual-gallery{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.visual-gallery figure{margin:0;border-radius:16px;overflow:hidden;background:#111;min-height:230px;position:relative}.visual-gallery img{display:block;width:100%;height:100%;min-height:230px;object-fit:cover}.visual-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px;color:#fff;font-size:12px;background:linear-gradient(transparent,#000c)}.visual-info{direction:rtl;padding:48px 32px}.visual-info h3{font-size:38px;color:var(--green);margin:8px 0 14px}.visual-info p{color:#554d42;line-height:1.9}.visual-fact{background:#eee5d5;border-right:3px solid var(--gold);padding:12px 14px;border-radius:10px;margin-top:9px}@media(max-width:850px){.visual-box{grid-template-columns:1fr}.visual-info{padding:25px}}@media(max-width:600px){.visual-gallery{grid-template-columns:1fr}}
+
+/* Final presentation polish */
+html{scroll-padding-top:88px}
+section[id]{scroll-margin-top:88px}
+::selection{background:#c9a84c55;color:var(--deep)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+img{background:#e6ddcd}
+.nav{transition:box-shadow .25s ease}
+.nav:hover{box-shadow:0 8px 28px #0d1f1a0d}
+.hero{position:relative}
+.hero h2{line-height:1.45}
+.hero .eyebrow{letter-spacing:1.6px}
+.btn,.topic,.detail,.pres-controls button{transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.topic{min-height:105px;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.topic[hidden]{display:none!important}
+.topic-empty{display:none;margin-top:14px;padding:15px 18px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);background:#fff}
+.topic-empty.show{display:block}
+.presentation{background:radial-gradient(circle at 85% 15%,#c9a84c20,transparent 28%),linear-gradient(135deg,#0d1f1a,#173b2f)}
+.presentation .slide{padding-bottom:55px}
+.presentation .slide .kicker{font-size:13px;letter-spacing:2px}
+.presentation .slide h2{max-width:1000px;margin:18px 0 22px}
+.presentation .slide p{max-width:850px;line-height:1.9}
+.pres-controls{z-index:3;left:25px;right:25px;justify-content:space-between;align-items:center}
+.pres-controls button{min-width:90px}
+.pres-controls button:hover{background:#c9a84c;color:#111}
+.pres-hint{position:fixed;left:50%;bottom:34px;transform:translateX(-50%);color:#c9c2b7;font-size:12px;white-space:nowrap}
+@media(max-width:650px){
+ .nav-inner{height:64px}.progress{top:64px}.hero{padding-top:105px}
+ .hero h1{font-size:clamp(52px,17vw,90px)}
+ .hero h2{font-size:25px}
+ .lead{font-size:16px}
+ .topic{min-height:85px}
+ .pres-controls{left:12px;right:12px;bottom:12px;gap:6px}
+ .pres-controls button{min-width:0;padding:9px 12px}
+ .pres-hint{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+}
+@media print{
+ .nav,.progress,.mode-btn,.pres-controls,.visual-modal{display:none!important}
+ body:after{display:none}
+ .section,.hero{padding:24px 0;break-inside:avoid}
+ .reveal{opacity:1;transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -71,7 +119,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;ba
 <div class="hero-art"><img src="https://egymonuments.gov.eg/media/1385/_mg_0134.jpg?anchor=center&height=850&mode=crop&rnd=133881476880000000&width=1250" alt="كنيسة أبي سرجة من الداخل"><div class="caption"><b>أبو سرجة · مصر القديمة</b><br>مكان تتقاطع فيه العمارة القبطية مع الذاكرة الدينية والتراث المصري.</div></div>
 </div></section>
 
-<section id="encyclopedia" class="section encyclopedia"><div class="container"><div class="ency-head"><div><div class="kicker">ABU SERGA ENCYCLOPEDIA</div><h3>الموسوعة في نظرة واحدة</h3><p class="lead">ابحث داخل أبواب الموسوعة أو اختر موضوعًا للدخول إليه.</p></div><div class="searchbox"><input id="topicSearch" placeholder="ابحث: المغارة، الأعمدة، الحجاب، التاريخ..."></div></div><div class="topic-grid" id="topics"><button class="topic" data-target="history" data-topic="التاريخ chronology history"><b>التاريخ والزمن</b><span>التأسيس · الترميم · الآراء</span></button><button class="topic" data-target="architecture" data-topic="العمارة architecture basilica"><b>العمارة</b><span>التخطيط · القياسات · العناصر</span></button><button class="topic" data-target="cave" data-topic="المغارة cave crypt holy family"><b>المغارة</b><span>الموقع · التقاليد · الأدلة</span></button><button class="topic" data-target="artifacts" data-topic="الفن art iconostasis ivory icons"><b>الفن والزخرفة</b><span>الحجاب · العاج · الأيقونات</span></button><button class="topic" data-target="saints" data-topic="sergius bacchus saints martyrs"><b>سرجيوس وواخس</b><span>الاسم · السيرة · الاستشهاد</span></button><button class="topic" data-target="fustat" data-topic="fustat old cairo context"><b>الفسطاط ومصر القديمة</b><span>السياق الحضري والأثري</span></button><button class="topic" data-target="stories" data-topic="patriarch isaac church history"><b>الدور الكنسي</b><span>البطاركة · الذاكرة الكنسية</span></button><button class="topic" data-target="technical" data-topic="conservation restoration heritage"><b>الحفظ والترميم</b><span>المياه · التربة · المخاطر</span></button></div></div></section><section id="about" class="section"><div class="container">
+<section id="encyclopedia" class="section encyclopedia"><div class="container"><div class="ency-head"><div><div class="kicker">ABU SERGA ENCYCLOPEDIA</div><h3>الموسوعة في نظرة واحدة</h3><p class="lead">ابحث داخل أبواب الموسوعة أو اختر موضوعًا للدخول إليه.</p></div><div class="searchbox"><input id="topicSearch" placeholder="ابحث في الموسوعة: المغارة، الأعمدة، الحجاب، التاريخ..." aria-label="ابحث داخل الموسوعة"></div></div><div class="topic-grid" id="topics"><button class="topic" data-target="history" data-topic="التاريخ chronology history"><b>التاريخ والزمن</b><span>التأسيس · الترميم · الآراء</span></button><button class="topic" data-target="architecture" data-topic="العمارة architecture basilica"><b>العمارة</b><span>التخطيط · القياسات · العناصر</span></button><button class="topic" data-target="cave" data-topic="المغارة cave crypt holy family"><b>المغارة</b><span>الموقع · التقاليد · الأدلة</span></button><button class="topic" data-target="artifacts" data-topic="الفن art iconostasis ivory icons"><b>الفن والزخرفة</b><span>الحجاب · العاج · الأيقونات</span></button><button class="topic" data-target="saints" data-topic="sergius wakhas saints martyrs"><b>سرجيوس وواخس</b><span>الاسم · السيرة · الاستشهاد</span></button><button class="topic" data-target="fustat" data-topic="fustat old cairo context"><b>الفسطاط ومصر القديمة</b><span>السياق الحضري والأثري</span></button><button class="topic" data-target="stories" data-topic="patriarch isaac church history"><b>الدور الكنسي</b><span>البطاركة · الذاكرة الكنسية</span></button><button class="topic" data-target="technical" data-topic="conservation restoration heritage"><b>الحفظ والترميم</b><span>المياه · التربة · المخاطر</span></button></div><div class="topic-empty" id="topicEmpty">مفيش موضوع مطابق للبحث ده. جرّب كلمة تانية.</div></div></section><section id="about" class="section"><div class="container">
 <div class="section-head"><div><div class="kicker">01 · CHURCH PROFILE</div><h3>أولًا: ما هي كنيسة أبي سرجة؟</h3></div><p class="lead">الاسم الشائع «أبو سرجة» يرتبط باسم الشهيدين سرجيوس وواخس، والكنيسة تقع في قلب منطقة مصر القديمة.</p></div>
 <div class="grid3">
 <article class="card reveal"><div class="num">01</div><h4>الموقع</h4><p>تقع في الفسطاط/مصر القديمة، فوق بقايا منشأة أو قلعة رومانية قديمة، داخل منطقة تضم مجموعة مهمة من آثار مصر القبطية.</p></article>
@@ -216,7 +264,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;ba
 </div></section>
 </main>
 <button class="mode-btn" id="presentBtn">🎬 وضع العرض</button>
-<div class="presentation" id="presentation"><div class="slide active"><div><div class="kicker">ABU SERGA · DIGITAL MUSEUM</div><h2>كنيسة أبي سرجة</h2><p>الشهيدان سرجيوس وواخس · مصر القديمة · كنيسة المغارة</p></div></div><div class="slide"><div><div class="kicker">01 · PLACE</div><h2>المكان قبل المبنى</h2><p>أبي سرجة جزء من مشهد الفسطاط ومصر القديمة، حيث تتجاور آثار مسيحية ويهودية وإسلامية.</p></div></div><div class="slide"><div><div class="kicker">02 · HISTORY</div><h2>التاريخ ليس محسومًا</h2><p>المصدر الرسمي يذكر رأيًا يرجعها لأواخر الرابع/أوائل الخامس، ورأيًا آخر إلى القرن السابع عشر.</p></div></div><div class="slide"><div><div class="kicker">03 · ARCHITECTURE</div><h2>الصحن → الأروقة → الهيكل → المغارة</h2><p>اقرأ الكنيسة كمسار معماري، لا كصورة واحدة.</p></div></div><div class="slide"><div><div class="kicker">04 · HOLY FAMILY</div><h2>المغارة</h2><p>ترتبط تقليديًا بقصة احتماء العائلة المقدسة، وهي نقطة أساسية في سرد مسار العائلة المقدسة.</p></div></div><div class="slide"><div><div class="kicker">05 · RESEARCH</div><h2>موثق · تقليدي · مختلف عليه</h2><p>الهدف ليس ملء الفراغ بالمعلومات، بل معرفة درجة كل معلومة ومصدرها.</p></div></div><div class="pres-controls"><button id="prev">السابق</button><button id="next">التالي</button><button id="close">إغلاق ×</button></div></div>
+<div class="presentation" id="presentation" role="dialog" aria-modal="true" aria-label="وضع العرض التقديمي"><div class="slide active"><div><div class="kicker">ABU SERGA · DIGITAL MUSEUM</div><h2>كنيسة أبي سرجة</h2><p>الشهيدان سرجيوس وواخس · مصر القديمة · كنيسة المغارة</p></div></div><div class="slide"><div><div class="kicker">01 · PLACE</div><h2>المكان قبل المبنى</h2><p>أبي سرجة جزء من مشهد الفسطاط ومصر القديمة، حيث تتجاور آثار مسيحية ويهودية وإسلامية.</p></div></div><div class="slide"><div><div class="kicker">02 · HISTORY</div><h2>التاريخ ليس محسومًا</h2><p>المصدر الرسمي يذكر رأيًا يرجعها لأواخر الرابع/أوائل الخامس، ورأيًا آخر إلى القرن السابع عشر.</p></div></div><div class="slide"><div><div class="kicker">03 · ARCHITECTURE</div><h2>الصحن → الأروقة → الهيكل → المغارة</h2><p>اقرأ الكنيسة كمسار معماري، لا كصورة واحدة.</p></div></div><div class="slide"><div><div class="kicker">04 · HOLY FAMILY</div><h2>المغارة</h2><p>ترتبط تقليديًا بقصة احتماء العائلة المقدسة، وهي نقطة أساسية في سرد مسار العائلة المقدسة.</p></div></div><div class="slide"><div><div class="kicker">05 · RESEARCH</div><h2>موثق · تقليدي · مختلف عليه</h2><p>الهدف ليس ملء الفراغ بالمعلومات، بل معرفة درجة كل معلومة ومصدرها.</p></div></div><div class="pres-controls"><button id="prev" type="button">← السابق</button><button id="next" type="button">التالي →</button><button id="close" type="button">إغلاق ×</button></div><div class="pres-hint">استخدم الأسهم للتنقل · Esc للإغلاق</div></div>
 <footer class="footer"><div class="container footer-inner"><div><b style="color:#fff">أبو سرجة</b> · Digital Encyclopedia</div><div><b style="color:#fff">بنيان</b> · إعداد وبحث <b style="color:#fff">يحيى طارق</b> · Old Cairo · Egypt</div></div></footer>
 
 <script>
@@ -224,9 +272,9 @@ const bar=document.getElementById('bar');
 addEventListener('scroll',()=>{const d=document.documentElement.scrollHeight-innerHeight;bar.style.width=(d>0?scrollY/d*100:0)+'%'},{passive:true});
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
-const search=document.getElementById('topicSearch');if(search)search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll('.topic').forEach(x=>x.style.display=!q||x.dataset.topic.toLowerCase().includes(q)?'block':'none')});
+const search=document.getElementById('topicSearch'),topicCards=[...document.querySelectorAll('.topic')],topicEmpty=document.getElementById('topicEmpty');if(search)search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();let shown=0;topicCards.forEach(x=>{const match=!q||(x.textContent+' '+(x.dataset.topic||'')).toLowerCase().includes(q);x.hidden=!match;if(match)shown++});if(topicEmpty)topicEmpty.classList.toggle('show',shown===0)});
 document.querySelectorAll('.detail').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.detail').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById('output').textContent=btn.dataset.text}));
-const presentation=document.getElementById('presentation'),slides=[...document.querySelectorAll('.presentation .slide')];let si=0;function showSlide(i){si=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===si))}document.getElementById('presentBtn').onclick=()=>{presentation.classList.add('on');showSlide(0)};document.getElementById('close').onclick=()=>presentation.classList.remove('on');document.getElementById('next').onclick=()=>showSlide(si+1);document.getElementById('prev').onclick=()=>showSlide(si-1);document.addEventListener('keydown',e=>{if(!presentation.classList.contains('on'))return;if(e.key==='Escape')presentation.classList.remove('on');if(e.key==='ArrowRight')showSlide(si-1);if(e.key==='ArrowLeft')showSlide(si+1)});
+const presentation=document.getElementById('presentation'),slides=[...document.querySelectorAll('.presentation .slide')],presentBtn=document.getElementById('presentBtn'),closeBtn=document.getElementById('close'),nextBtn=document.getElementById('next'),prevBtn=document.getElementById('prev');let si=0;function showSlide(i){if(!slides.length)return;si=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===si))}function closePresentation(){if(presentation)presentation.classList.remove('on');if(presentBtn)presentBtn.focus()}if(presentBtn)presentBtn.onclick=()=>{presentation.classList.add('on');showSlide(0);if(closeBtn)closeBtn.focus()};if(closeBtn)closeBtn.onclick=closePresentation;if(nextBtn)nextBtn.onclick=()=>showSlide(si+1);if(prevBtn)prevBtn.onclick=()=>showSlide(si-1);document.addEventListener('keydown',e=>{if(!presentation||!presentation.classList.contains('on'))return;if(e.key==='Escape')closePresentation();if(e.key==='ArrowRight')showSlide(si-1);if(e.key==='ArrowLeft')showSlide(si+1)});
 </script>
 <div class="visual-modal" id="visualModal" aria-hidden="true"><div class="visual-backdrop" data-close-visual></div><div class="visual-box" role="dialog" aria-modal="true"><button class="visual-close" data-close-visual aria-label="إغلاق">×</button><div class="visual-gallery" id="visualGallery"></div><div class="visual-info"><div class="kicker" id="visualKicker"></div><h3 id="visualTitle"></h3><p id="visualText"></p><div id="visualFacts"></div></div></div></div><script>
 const visualData={
